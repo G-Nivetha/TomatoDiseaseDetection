@@ -19,7 +19,7 @@ disease_info = pd.read_csv('app/models/disease_info.csv', encoding='cp1252')
 export_file_url = 'https://drive.google.com/uc?export=download&id=1-VkNYqbb-KBBncma0Khs1ag1inu7QFIX'
 
 export_file_name = 'export_resnet34_model.pkl'
-export_file_path = 'app/models'
+path = Path(__file__).parent
 
 classes = {'Background_Without_Leaf': 0,
            'Tomato_Bacterial_spot': 1,
@@ -54,9 +54,9 @@ async def download_file(url, dest):
 
 
 async def setup_learner():
-    await download_file(export_file_url, 'app/models/export_resnet34_model.pkl')
+    await download_file(export_file_url, path / export_file_name)
     try:
-        learn = load_learner(export_file_path, export_file_name)
+        learn = load_learner(path, export_file_name)
         return learn
     except RuntimeError as e:
         if len(e.args) > 0 and "CPU-only machine" in e.args[0]:
