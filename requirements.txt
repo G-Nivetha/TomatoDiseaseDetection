@@ -1,0 +1,11 @@
+aiofiles
+aiohttp
+asyncio
+fastai==1.0.61
+torch
+torchvision
+numpy
+pillow
+python-multipart
+starlette
+uvicorn
