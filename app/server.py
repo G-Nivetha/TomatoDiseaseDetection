@@ -11,8 +11,6 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse
 from starlette.responses import JSONResponse
 from starlette.staticfiles import StaticFiles
-import matplotlib
-matplotlib.use('TKAgg')
 import pandas as pd
 
 
