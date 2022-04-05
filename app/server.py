@@ -19,7 +19,7 @@ disease_info = pd.read_csv('app/models/disease_info.csv', encoding='cp1252')
 export_file_url = ("https://drive.google.com/uc?export=download&id=1-VkNYqbb-KBBncma0Khs1ag1inu7QFIX")
 
 export_file_name = "export_resnet34_model.pkl"
-export_file_path = Path(__file__).parent / "models"
+export_file_path = "app/models"
 
 classes = {'Background_Without_Leaf': 0,
            'Tomato_Bacterial_spot': 1,
