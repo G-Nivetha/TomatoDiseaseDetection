@@ -18,7 +18,7 @@ import pandas as pd
 
 disease_info = pd.read_csv('disease_info.csv', encoding='cp1252')
 
-'''export_file_url = ("https://drive.google.com/uc?export=download&id=1-VkNYqbb-KBBncma0Khs1ag1inu7QFIX")'''
+export_file_url = ("https://drive.google.com/uc?export=download&id=1-VkNYqbb-KBBncma0Khs1ag1inu7QFIX")
 
 export_file_name = "export_resnet34_model.pkl"
 export_file_path = Path(__file__).parent / "models"
@@ -45,18 +45,18 @@ app.add_middleware(
 app.mount("/static", StaticFiles(directory="app/static"))
 
 
-'''async def download_file(url, dest):
+async def download_file(url, dest):
     if dest.exists():
         return
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as response:
             data = await response.read()
             with open(dest, "wb") as f:
-                f.write(data)'''
+                f.write(data)
 
 
 async def setup_learner():
-    '''await download_file(export_file_url, export_file_path / export_file_name)'''
+    await download_file(export_file_url, export_file_path / export_file_name)
     try:
         learn = load_learner(export_file_path, export_file_name)
         return learn
