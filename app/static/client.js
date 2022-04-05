@@ -29,8 +29,8 @@ $(document).ready(function () {
             alert("Please select a file to analyze!");
         }
         else {
-            analyze_button.html("Analyzing..");
-            analyze_button.prop("disabled", "true");
+            $("#analyze-button").html("Analyzing..");
+            $("#analyze-button").prop("disabled", "true");
 
             var fd = new FormData();
             fd.append('file', imagefile[0]);
@@ -55,8 +55,8 @@ $(document).ready(function () {
             });
         };
 
-        analyze_button.prop("disabled", "");
-        analyze_button.html("Analyze");
+        $("#analyze-button").prop("disabled", "");
+        $("#analyze-button").html("Analyze");
         console.log("Submitted!");
     });
 });
