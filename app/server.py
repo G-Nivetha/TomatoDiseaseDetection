@@ -14,7 +14,7 @@ from starlette.staticfiles import StaticFiles
 import pandas as pd
 
 
-disease_info = pd.read_csv('disease_info.csv', encoding='cp1252')
+disease_info = pd.read_csv('app/models/disease_info.csv', encoding='cp1252')
 
 export_file_url = ("https://drive.google.com/uc?export=download&id=1-VkNYqbb-KBBncma0Khs1ag1inu7QFIX")
 
